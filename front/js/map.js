@@ -15,19 +15,21 @@
 1. 지도 생성 & 확대 축소 컨트롤러
 https://apis.map.kakao.com/web/sample/addMapControl/
 */
-
-var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
-var options = {
+function InitMap(){
+  var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
+  var options = {
   //지도를 생성할 때 필요한 기본 옵션
   center: new kakao.maps.LatLng(37.54, 126.96), //지도의 중심좌표. 서울 한가운데
   level: 8, //지도의 레벨(확대, 축소 정도) 3에서 8레벨로 확대
-};
+  };
 
-var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+  var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-// 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-var zoomControl = new kakao.maps.ZoomControl();
-map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+  // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+  var zoomControl = new kakao.maps.ZoomControl();
+  map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+}
+
 
 /*
 **********************************************************
