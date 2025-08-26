@@ -15,7 +15,7 @@
 1. 지도 생성 & 확대 축소 컨트롤러
 https://apis.map.kakao.com/web/sample/addMapControl/
 */
-function InitMap(){
+function initMap(){
   var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
   var options = {
   //지도를 생성할 때 필요한 기본 옵션
@@ -28,7 +28,7 @@ function InitMap(){
   // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
   var zoomControl = new kakao.maps.ZoomControl();
   map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-}
+
 
 
 /*
@@ -233,3 +233,4 @@ async function setting() {
 }
 
 setting();
+}
