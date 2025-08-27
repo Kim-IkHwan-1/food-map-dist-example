@@ -64,10 +64,20 @@
       <!-- 카카오지도 -->
     </main>
 
-    <script
-      type="text/javascript"
-      src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=f61293f29cee5272d2ced2178974824f&callback=initMap"
-    ></script>
+  <script 
+    type="text/javascript" 
+    src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=f61293f29cee5272d2ced2178974824f&autoload=false">
+  </script>
+    <script>
+      kakao.maps.load(function () {
+        const container = document.getElementById('map');
+        const options = {
+          center: new kakao.maps.LatLng(37.5665, 126.9780), // 서울 중심
+          level: 3
+        };
+        const map = new kakao.maps.Map(container, options);
+      });
+    </script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
       integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
